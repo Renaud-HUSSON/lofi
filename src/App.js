@@ -12,7 +12,7 @@ function App() {
       <div className={`transition duration-500 font-montserrat flex text-black ${menu ? 'transform -translate-x-56 md:-translate-x-72' : ''}`}>
         <div className="w-screen">
           <Header />
-          <main className="md:pl-20 md:pr-24 pl-5 pr-9">
+          <main className="md:pl-20 md:pr-24 pl-5 pr-9 overflow-y-auto">
             <Routes />
           </main>
         </div>
