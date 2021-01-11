@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import ThemeSwitch from "./Menu/ThemeSwitch"
 
 const Menu = () => {
-  return <nav className="relative flex flex-col font-bangers text-4xl bg-black text-white">
+  return <nav className="transition-colors duration-500 relative flex flex-col font-bangers text-4xl dark:bg-white bg-black dark:text-black text-white">
     <ThemeSwitch />
     <ul className="w-56 md:w-72 mt-10">
       <li className="text-center my-3"><Link className="p-3" to="/">HOME</Link></li>

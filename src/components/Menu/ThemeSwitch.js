@@ -1,4 +1,13 @@
+import { useContext } from "react"
+import { DarkContext } from "../../context/Dark"
+
 const ThemeSwitch = () => {
+  const [dark, setDark] = useContext(DarkContext)
+  
+  const handleClick = () => {
+    setDark(theme => !theme)
+  }
+  
   return <div>
     <div className="flex flex-col md:flex-row justify-between items-center p-6">
       <p>THEME:</p>
@@ -22,12 +31,12 @@ const ThemeSwitch = () => {
           <rect x="20.4293" y="13.6" width="1.23809" height="5.57076" transform="rotate(-90.1466 20.4293 13.6)" fill="#DECA19"/>
         </svg>
 
-        <div className="w-10 h-5 bg-white rounded-xl relative cursor-pointer mx-3">
-          <div className="w-4 h-4 bg-black rounded-lg absolute left-0.5 top-0.5"></div>
+        <div className="border transition-colors duration-500 border-black w-10 h-5 bg-white rounded-xl relative cursor-pointer mx-3" onClick={handleClick}>
+          <div className={`w-4 h-4 bg-black rounded-lg absolute ${!dark ? 'left-0.5' : 'right-0.5'} top-1/2 transform -translate-y-1/2`}></div>
         </div>
 
         <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fillRule="evenodd" clipRule="evenodd" d="M24 19.9836C22.6362 20.6008 21.1218 20.9444 19.527 20.9444C13.5356 20.9444 8.67866 16.0942 8.67866 10.1111C8.67866 5.6691 11.3558 1.8515 15.1868 0.179594C14.4814 0.061479 13.7569 0 13.018 0C5.82835 0 0 5.8203 0 13C0 20.1797 5.82835 26 13.018 26C17.6337 26 21.6884 23.6011 24 19.9836Z" fill="white"/>
+          <path fillRule="evenodd" clipRule="evenodd" d="M24 19.9836C22.6362 20.6008 21.1218 20.9444 19.527 20.9444C13.5356 20.9444 8.67866 16.0942 8.67866 10.1111C8.67866 5.6691 11.3558 1.8515 15.1868 0.179594C14.4814 0.061479 13.7569 0 13.018 0C5.82835 0 0 5.8203 0 13C0 20.1797 5.82835 26 13.018 26C17.6337 26 21.6884 23.6011 24 19.9836Z" fill={dark ? '#161616' : '#FFF'}/>
         </svg>
       </div>
 

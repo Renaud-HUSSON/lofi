@@ -5,13 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import './styles/index.css'
 import {BrowserRouter} from 'react-router-dom'
 import { MenuProvider } from './context/Menu';
+import { DarkProvider } from './context/Dark';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <MenuProvider>
-        <App />
-      </MenuProvider>
+      <DarkProvider>
+        <MenuProvider>
+          <App />
+        </MenuProvider>
+      </DarkProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
