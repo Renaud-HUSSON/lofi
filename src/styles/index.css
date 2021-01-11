@@ -4,6 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
+:root {
+  --navHeight: 8rem;
+}
+
+@media (max-width: 640px){
+  :root {
+    --navHeight: 6rem;
+  }
+}
+
+header {
+  height: var(--navHeight) !important;
+}
+
+header div svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+main {
+  min-height: calc(100vh - var(--navHeight));
+}
+
+.home {
+  min-height: calc(100vh - var(--navHeight));
 }
