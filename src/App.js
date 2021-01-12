@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Player from "./components/Player";
 import { MenuContext } from "./context/Menu";
 import Routes from "./Routes";
 
@@ -15,6 +16,7 @@ function App() {
           <main className="md:pl-20 md:pr-24 pl-5 pr-9 overflow-y-auto">
             <Routes />
           </main>
+          <Player />
         </div>
         <Menu />
       </div>

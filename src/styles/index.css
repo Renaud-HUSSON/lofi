@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap');
 
 @tailwind base;
-@tailwind components;
+/* @tailwind components; */
 @tailwind utilities;
 
 :root {
   --navHeight: 8rem;
+  --playerHeight: 4rem;
 }
 
 @media (max-width: 640px){
@@ -24,9 +25,16 @@ header div svg {
 }
 
 main {
-  min-height: calc(100vh - var(--navHeight));
+  height: calc(100vh - var(--navHeight) - var(--playerHeight));
+}
+
+.player {
+  height: var(--playerHeight);
 }
 
 .home {
-  min-height: calc(100vh - var(--navHeight));
+  min-height: calc(100vh - var(--navHeight) - var(--playerHeight));
+  height: auto;
 }
+
+

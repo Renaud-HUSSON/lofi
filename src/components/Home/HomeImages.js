@@ -1,5 +1,5 @@
 const HomeImages = () => {
-  return <section className="lg:w-1/2 w-full mb-5" >
+  return <section className="lg:w-1/2 w-full pb-5" >
     <div className="flex">
       <div className="w-1/2 ">
         <img className="w-full" src={`${process.env.PUBLIC_URL}/images/lofi1.jpg`} alt="Lofi thumbnail"/>
