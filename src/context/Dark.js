@@ -9,9 +9,13 @@ export const DarkProvider = ({children}) => {
   const [dark, setDark] = useState(isDark)
 
   useEffect(() => {
-    dark
-    ?document.querySelector('html').classList.add('dark')
-    :document.querySelector('html').classList.remove('dark')
+    if(dark){
+      document.querySelector('html').classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    }else{
+      document.querySelector('html').classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
   }, [dark])
 
   matchesDark.addEventListener('change', (e) => {
