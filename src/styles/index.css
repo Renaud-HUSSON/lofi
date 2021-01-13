@@ -32,6 +32,15 @@ main {
   height: var(--playerHeight);
 }
 
+.player__details {
+  height: calc(100vh - var(--playerHeight));
+  bottom: -100vh;
+}
+
+.player__details--opened {
+  bottom: var(--playerHeight) !important;
+}
+
 .home {
   min-height: calc(100vh - var(--navHeight) - var(--playerHeight));
   height: auto;
@@ -45,5 +54,7 @@ main {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
 
 

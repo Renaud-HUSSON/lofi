@@ -5,7 +5,7 @@ import Player from "./components/Player";
 import { MenuContext } from "./context/Menu";
 import Routes from "./Routes";
 
-function App() {  
+function App() { 
   const [menu, ] = useContext(MenuContext)
 
   return (
@@ -13,7 +13,7 @@ function App() {
       <div className={`transition duration-500 font-montserrat flex dark:text-white text-black ${menu ? 'transform -translate-x-56 md:-translate-x-72' : ''}`}>
         <div className="w-screen">
           <Header />
-          <main className="md:pl-20 md:pr-24 pl-5 pr-9 no-scrollbar overflow-y-auto">
+          <main className="md:px-20 px-5 no-scrollbar overflow-y-auto">
             <Routes />
           </main>
           <Player />
@@ -25,3 +25,4 @@ function App() {
 }
 
 export default App;
+

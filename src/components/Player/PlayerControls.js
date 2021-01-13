@@ -9,7 +9,7 @@ const PlayerControls = () => {
     setPlay(play => !play)
   }
   
-  return <div className="flex mx-auto">
+  return <div className="z-50 flex mx-auto">
     {/* Previous */}
     <div className="cursor-pointer p-2">
       <svg width="19" height="30" viewBox="0 0 27 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,20 +20,20 @@ const PlayerControls = () => {
 
     {
       play
-      /* Play */
-      ?<div className="cursor-pointer p-2 mx-12" onClick={handleClick}>
-        <svg width="23" height="30" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M36 20.5L0.749998 40.8516L0.75 0.148402L36 20.5Z" fill={dark ? '#FFF' : '#161616'}/>
-        </svg>
-      </div>
-
       /* Stop */
-      :<div className="cursor-pointer p-2 mx-12" onClick={handleClick}>
+      ?<div className="cursor-pointer p-2 mx-12" onClick={handleClick}>
         <svg width="23" height="30" viewBox="0 0 31 43" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
           <rect x="20" width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
         </svg>
       </div>
+      /* Play */
+      :<div className="cursor-pointer p-2 mx-12" onClick={handleClick}>
+        <svg width="23" height="30" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36 20.5L0.749998 40.8516L0.75 0.148402L36 20.5Z" fill={dark ? '#FFF' : '#161616'}/>
+        </svg>
+      </div>
+
     }
 
     {/* Next */}

@@ -11,7 +11,7 @@ const Header = () => {
     setMenu(menu => !menu)
   }
   
-  return <header className="relative h-32 z-10 font-bangers flex justify-between items-center w-screen md:px-20 md:py-10 p-5">
+  return <header className="relative h-32 z-10 font-bangers flex justify-between items-center w-screen md:pl-20 md:pr-16 md:py-10 pl-5 pr-1">
     <p className="text-4xl sm:text-6xl"><Link to="/">LOFI.</Link></p>
     <div className="p-4 cursor-pointer" onClick={HandleClick}>
       <svg viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">

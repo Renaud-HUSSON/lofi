@@ -7,6 +7,7 @@ import {BrowserRouter} from 'react-router-dom'
 import { MenuProvider } from './context/Menu';
 import { DarkProvider } from './context/Dark';
 import { SongsProvider } from './context/Songs';
+import { CurrentSongProvider } from './context/CurrentSong';
 
 require('dotenv').config()
 
@@ -15,9 +16,11 @@ ReactDOM.render(
     <BrowserRouter>
       <DarkProvider>
         <SongsProvider>
-          <MenuProvider>
-            <App />
-          </MenuProvider>
+          <CurrentSongProvider>
+            <MenuProvider>
+              <App />
+            </MenuProvider>
+          </CurrentSongProvider>
         </SongsProvider>
       </DarkProvider>
     </BrowserRouter>
