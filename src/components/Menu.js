@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { DarkContext } from "../context/Dark"
-import ThemeSwitch from "./Menu/ThemeSwitch"
+import Parameters from "./Menu/Parameters"
 
 const Menu = () => {
   const [dark, ] = useContext(DarkContext)
   
   return <nav className="transition-colors duration-500 relative flex flex-col font-bangers text-4xl dark:bg-white bg-black dark:text-black text-white">
-    <ThemeSwitch />
+    <Parameters />
     <ul className="w-56 md:w-72 mt-10">
       <li className="text-center my-3"><Link className="p-3" to="/">HOME</Link></li>
       <li className="text-center my-3"><Link className="p-3" to="/about">ABOUT</Link></li>

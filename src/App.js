@@ -9,7 +9,7 @@ function App() {
   const [menu, ] = useContext(MenuContext)
 
   return (
-    <div className="transition-colors duration-500 dark:bg-black overflow-x-hidden">
+    <div className="transition-colors duration-500 dark:bg-black overflow-hidden">
       <div className={`transition duration-500 font-montserrat flex dark:text-white text-black ${menu ? 'transform -translate-x-56 md:-translate-x-72' : ''}`}>
         <div className="w-screen">
           <Header />
