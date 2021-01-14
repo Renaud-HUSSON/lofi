@@ -30,6 +30,7 @@ class YoutubeVideo {
       height: '360',
       width: '640',
       videoId: this.#videoId,
+      suggestedQuality: 'medium',
       events: {
         'onStateChange': this.stateChange()
       },
