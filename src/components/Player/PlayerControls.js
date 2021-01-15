@@ -1,78 +1,25 @@
-import { useCallback, useContext, useState } from "react"
-import { CurrentSongContext } from "../../context/CurrentSong"
-import { DarkContext } from "../../context/Dark"
-import { SongsContext } from "../../context/Songs"
+import { useState } from "react"
+import NextSong from "./NextSong"
+import PlaySong from "./PlaySong"
+import PreviousSong from "./PreviousSong"
+import StopSong from "./StopSong"
 
 const PlayerControls = ({player}) => {
-  const [songs, ] = useContext(SongsContext)
-  const [currentSong, setCurrentSong] = useContext(CurrentSongContext)
-  const [dark, ] = useContext(DarkContext)
   const [play, setPlay] = useState(false)
-
-  const stopVideo = useCallback(() => {
-    setPlay(play => !play)
-    player.stop()
-  }, [player])
-
-  const playVideo = useCallback(() => {
-    setPlay(play => !play)
-    player.play()
-  }, [player])
-
-  const previousSong = useCallback(() => {
-    setCurrentSong(song => {
-      return {
-        index: (song.index - 1 + songs.length) % songs.length,
-        song: songs[(song.index - 1 + songs.length) % songs.length]
-      }
-    })
-    player.changeVideo(songs[(currentSong.index - 1 + songs.length) % songs.length].id.videoId)
-  }, [player, setCurrentSong, songs, currentSong])
-
-  const nextSong = useCallback(() => {
-    setCurrentSong(song => {
-      return {
-        index: (song.index + 1) % songs.length,
-        song: songs[(song.index + 1) % songs.length]
-      }
-    })
-    player.changeVideo(songs[(currentSong.index + 1) % songs.length].id.videoId)
-  }, [player, setCurrentSong, songs, currentSong])
   
   return <div className="z-50 flex mx-auto">
-    {/* Previous */}
-    <div className="cursor-pointer p-2" onClick={previousSong}>
-      <svg width="19" height="30" viewBox="0 0 27 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="23.145" y1="40.791" x2="2.52349" y2="20.1694" stroke={dark ? '#FFF' : '#161616'} strokeWidth="5"/>
-        <line x1="24.4608" y1="1.76777" x2="3.76775" y2="22.4608" stroke={dark ? '#FFF' : '#161616'} strokeWidth="5"/>
-      </svg>
-    </div>
+    <PreviousSong player={player} setPlay={setPlay}/>
 
     {
       play
       /* Stop */
-      ?<div className="cursor-pointer p-2 mx-12" onClick={stopVideo}>
-        <svg width="23" height="30" viewBox="0 0 31 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
-          <rect x="20" width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
-        </svg>
-      </div>
+      ?<StopSong player={player} setPlay={setPlay}/>
       /* Play */
-      :<div className="cursor-pointer p-2 mx-12" onClick={playVideo}>
-        <svg width="23" height="30" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M36 20.5L0.749998 40.8516L0.75 0.148402L36 20.5Z" fill={dark ? '#FFF' : '#161616'}/>
-        </svg>
-      </div>
-
+      :<PlaySong player={player} setPlay={setPlay}/>
     }
 
-    {/* Next */}
-    <div className="cursor-pointer p-2" onClick={nextSong}>
-      <svg width="19" height="30" viewBox="0 0 27 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="3.76777" y1="2.23223" x2="24.3893" y2="22.8538" stroke={dark ? '#FFF' : '#161616'} strokeWidth="5"/>
-        <line x1="2.45202" y1="41.2554" x2="23.145" y2="20.5624" stroke={dark ? '#FFF' : '#161616'} strokeWidth="5"/>
-      </svg>
-    </div>
+    <NextSong player={player} setPlay={setPlay}/>
+    
   </div>
 }
 
