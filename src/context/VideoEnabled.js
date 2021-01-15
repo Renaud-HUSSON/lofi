@@ -4,8 +4,6 @@ import { useEffect } from "react/cjs/react.development";
 export const VideoEnabledContext = createContext()
 
 export const VideoEnabledProvider = ({children}) => {
-  console.log(localStorage.getItem('videoEnabled') === 'false')
-  
   const isVideoEnabled = localStorage.getItem('videoEnabled') 
     ? localStorage.getItem('videoEnabled') === 'false'
       ? false

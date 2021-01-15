@@ -29,6 +29,12 @@ export const CurrentSongProvider = ({children}) => {
     }
   }, [songs])
 
+  useEffect(() => {
+    if(currentSong){
+      localStorage.setItem('currentSong', currentSong.song.id.videoId)
+    }
+  }, [currentSong])
+
   return <CurrentSongContext.Provider value={[currentSong, setCurrentSong]}>
     {children}
   </CurrentSongContext.Provider>
