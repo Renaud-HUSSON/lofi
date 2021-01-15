@@ -19,16 +19,16 @@ export const CurrentSongProvider = ({children}) => {
         })
   
         currentSongToSet = index !== -1
-        ? songs[index]
-        : songs[0]
+        ? {index: index, song: songs[index]}
+        : {index: 0, song: songs[0]}
       }else{
-        currentSongToSet = songs[0]
+        currentSongToSet = {index: 0, song: songs[0]}
       }
       
       setCurrentSong(currentSongToSet)
     }
   }, [songs])
-  
+
   return <CurrentSongContext.Provider value={[currentSong, setCurrentSong]}>
     {children}
   </CurrentSongContext.Provider>

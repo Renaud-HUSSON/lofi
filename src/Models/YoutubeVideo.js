@@ -47,6 +47,13 @@ class YoutubeVideo {
     });
   }
 
+  changeVideo(id){
+    this.#player.loadVideoById({
+      'videoId': id,
+      'suggestedQuality': 'medium'
+    })
+  }
+
   play = () => {
     this.#player.playVideo()
   }
@@ -56,7 +63,6 @@ class YoutubeVideo {
   }
 
   stateChange = () => {
-
   }
 
   //GETTERS & SETTERS
