@@ -4,7 +4,6 @@ import YoutubeVideo from "./YoutubeVideo"
 
 const PlayerDetails = ({currentSong, details}) => {
   const [videoEnabled, ] = useContext(VideoEnabledContext)
-  console.log(currentSong)
   
   return currentSong
   ?<div className={`no-scrollbar z-10 transition-all overflow-hidden duration-500 player__details fixed right-0 left-0 bg-white dark:bg-black transform ${details ? 'player__details--opened' : ''}`}>
