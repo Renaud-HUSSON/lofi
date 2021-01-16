@@ -2,6 +2,7 @@ import { useCallback, useContext } from "react"
 import { CurrentSongContext } from "../../context/CurrentSong"
 import { PlayContext } from "../../context/Play"
 import PlaySong from "../shared/PlaySong"
+import StopSong from "../shared/StopSong"
 
 const Song = ({song, index}) => {
   const [currentSong, setCurrentSong] = useContext(CurrentSongContext)
@@ -20,10 +21,18 @@ const Song = ({song, index}) => {
       song: song
     })
     setPlay(true)
-  }, [setCurrentSong, song, index])
+  }, [setCurrentSong, song, index, setPlay])
   
-  return <div className="song cursor-pointer" onClick={handleClick}>
-
+  return <div className="song cursor-pointer relative" onClick={handleClick}>
+    <div className={`transition duration-200 absolute w-full h-full bg-black song--hover hover:opacity-80 ${!isCurrentSong ? 'opacity-0' : 'opacity-80'}`}>
+      {
+        isCurrentSong
+        ?play
+          ?<StopSong className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-0"/>
+          :<PlaySong className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-0"/>
+        :<PlaySong className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-0" onClick={handleClick}/>
+      }
+    </div>
     <img className="w-full" src={song.snippet.thumbnails.medium.url} alt={song.snippet.title}/>
   </div>
 }

@@ -70,6 +70,10 @@ main {
 	height: 100%;
 }
 
+.song .song--hover{
+  
+}
+
 @media (max-width: 767px){
   .minHeightYoutube {
     min-height: calc(92vw * 9/16 + 100px);
