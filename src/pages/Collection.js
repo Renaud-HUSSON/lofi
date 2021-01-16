@@ -9,8 +9,8 @@ const Collection = () => {
   return songs
   ?<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {
-      songs.map(song => {
-        return <Song key={song.id.videoId} image={song.snippet.thumbnails.medium.url}/>
+      songs.map((song, index) => {
+        return <Song key={song.id.videoId} song={song} index={index}/>
       })
     }
   </section>

@@ -9,6 +9,8 @@ import { DarkProvider } from './context/Dark';
 import { SongsProvider } from './context/Songs';
 import { CurrentSongProvider } from './context/CurrentSong';
 import { VideoEnabledProvider } from './context/VideoEnabled';
+import { PlayProvider } from './context/Play';
+import { PlayerProvider } from './context/Player';
 
 require('dotenv').config()
 
@@ -18,11 +20,15 @@ ReactDOM.render(
       <DarkProvider>
         <VideoEnabledProvider>
           <SongsProvider>
-            <CurrentSongProvider>
-              <MenuProvider>
-                <App />
-              </MenuProvider>
-            </CurrentSongProvider>
+            <PlayerProvider>
+              <CurrentSongProvider>
+                <PlayProvider>
+                  <MenuProvider>
+                    <App />
+                  </MenuProvider>
+                </PlayProvider>
+              </CurrentSongProvider>
+            </PlayerProvider>
           </SongsProvider>
         </VideoEnabledProvider>
       </DarkProvider>

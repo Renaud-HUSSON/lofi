@@ -3,29 +3,17 @@ import { CurrentSongContext } from "../context/CurrentSong"
 import { DarkContext } from "../context/Dark"
 import PlayerControls from "./Player/PlayerControls"
 import PlayerDetails from "./Player/PlayerDetails"
-import YoutubeVideo from "../Models/YoutubeVideo"
 import { useLocation } from "react-router-dom"
+import { PlayerContext } from "../context/Player"
 
 const Player = React.memo(() => {
-  const [initialize, setInitialize] = useState(false)
-
-  const [details, setDetails] = useState(false)
-  const [player, setPlayer] = useState()
-  
+  const [player, ] = useContext(PlayerContext)
   const [currentSong, ] = useContext(CurrentSongContext)
   const [dark, ] = useContext(DarkContext)
 
-  const location = useLocation()
+  const [details, setDetails] = useState(false)
 
-  //Initialize the youtube video object, only once when the initial song is ready
-  useEffect(() => {
-    if(currentSong && !initialize){
-      setPlayer(new YoutubeVideo({
-        videoId: currentSong.song.id.videoId
-      }))
-      setInitialize(true)
-    }
-  }, [currentSong, initialize])
+  const location = useLocation()
 
   useEffect(() => {
     setDetails(false)
