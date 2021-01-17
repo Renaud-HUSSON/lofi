@@ -1,0 +1,7 @@
+FROM node:14-alpine
+WORKDIR /client
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+EXPOSE 2300

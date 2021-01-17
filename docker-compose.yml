@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  client:
+    container_name: loficlient
+    image: client
+    build:
+      context: ./client
+    depends_on:
+      - api
+      - nginx
+    ports:
+      - 2300:3000
+    command: npm start
+    volumes:
+      - ./client/src:/client/src
+    restart: always
+  api:
+    container_name: lofiapi
+    image: api
+    build:
+      context: ./api
+    depends_on:
+      - db
+      - nginx
+    ports:
+      - 2301:2301
+    command: npm run watch
+    restart: always
+  db:
+    container_name: lofidb
+    image: db
+    build:
+      context: ./db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: lofi
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+    restart: always
+  nginx:
+    container_name: lofinginx
+    image: nginx:latest
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
