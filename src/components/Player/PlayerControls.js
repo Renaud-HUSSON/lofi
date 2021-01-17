@@ -1,12 +1,13 @@
-import { useState } from "react"
 import NextSong from "./NextSong"
 import PlaySong from "../shared/PlaySong"
 import PreviousSong from "./PreviousSong"
 import StopSong from "../shared/StopSong"
 import { useContext } from "react/cjs/react.development"
 import { PlayContext } from "../../context/Play"
+import { PlayerContext } from "../../context/Player"
 
-const PlayerControls = ({player}) => {
+const PlayerControls = () => {
+  const [player, ] = useContext(PlayerContext)
   const [play, setPlay] = useContext(PlayContext)
   
   return <div className="z-50 flex mx-auto">

@@ -41,7 +41,7 @@ export const PlayerProvider = ({children}) => {
       setInitialize(true)
     }
   }, [initialize, songs])
-  
+
   return <PlayerContext.Provider value={[player, setPlayer]}>
     {children}
   </PlayerContext.Provider>

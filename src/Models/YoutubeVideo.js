@@ -25,14 +25,14 @@ class YoutubeVideo {
     }
   }
 
-  loadVideo = () => {
+  loadVideo = (e) => {
     this.#player = new window.YT.Player(this.#id || 'youtubevideoplayer', {
       height: '360',
       width: '640',
       videoId: this.#videoId,
       suggestedQuality: 'medium',
       events: {
-        'onStateChange': this.stateChange()
+        'onReady': this.onReady
       },
       playerVars: { 
         'autoplay': 0,
@@ -57,14 +57,31 @@ class YoutubeVideo {
   }
 
   play = () => {
-    this.#player.playVideo()
+    try{
+      this.#player.playVideo()
+    }catch(e){}
   }
   
   stop = () => {
-    this.#player.pauseVideo()
+    try {
+      this.#player.pauseVideo()
+    }catch(e){}
   }
 
-  stateChange = () => {
+  getVolume = () => {
+    try{
+      return this.#player.getVolume()
+    }catch(e){}
+  }
+
+  setVolume = (volume) => {
+    try{
+      this.#player.setVolume(volume)
+    }catch(e){}
+  }
+
+  onReady = () => {
+    this.#player.setVolume(35)
   }
 
   //GETTERS & SETTERS

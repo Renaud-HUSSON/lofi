@@ -4,10 +4,9 @@ import { DarkContext } from "../context/Dark"
 import PlayerControls from "./Player/PlayerControls"
 import PlayerDetails from "./Player/PlayerDetails"
 import { useLocation } from "react-router-dom"
-import { PlayerContext } from "../context/Player"
+import VolumeChanger from "./Player/VolumeChanger"
 
 const Player = React.memo(() => {
-  const [player, ] = useContext(PlayerContext)
   const [currentSong, ] = useContext(CurrentSongContext)
   const [dark, ] = useContext(DarkContext)
 
@@ -24,7 +23,10 @@ const Player = React.memo(() => {
   }, [])
 
   return <section className="player flex justify-center overflow-hidden relative items-center md:px-20 px-5">
-    <PlayerControls player={player} />
+    <div className="hidden lg:flex items-center absolute top-1/2 left-20 transform -translate-y-1/2">
+      <VolumeChanger />
+    </div>
+    <PlayerControls />
     <div className="absolute transform -translate-y-1/2bottom-1/2 right-4 lg:right-20 z-50 p-2 cursor-pointer" onClick={handleClick} >
       <svg width="7" height="27" viewBox="0 0 7 27" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="3.5" cy="3.5" r="3.5" fill={dark ? '#FFF' : '#161616'}/>
