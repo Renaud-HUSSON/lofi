@@ -1,21 +1,18 @@
 import { useCallback, useContext } from "react"
 import { DarkContext } from "../../context/Dark"
 import { PlayContext } from "../../context/Play"
-import { PlayerContext } from "../../context/Player"
 
 const PlaySong = ({className, onClick = () => {}}) => {
   const [, setPlay] = useContext(PlayContext)
   const [dark, ] = useContext(DarkContext)
-  const [player, ] = useContext(PlayerContext)
   
   const playVideo = useCallback((e) => {
     e.stopPropagation()
     
     setPlay(play => !play)
-    player.play()
 
     onClick()
-  }, [player, setPlay, onClick])
+  }, [setPlay, onClick])
 
   return <div className={`${className} cursor-pointer p-2 mx-12`} onClick={playVideo}>
   <svg width="23" height="30" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">

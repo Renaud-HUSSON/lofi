@@ -14,14 +14,16 @@ const Song = ({song, index}) => {
     :false
 
   const handleClick = useCallback(() => {
-    console.log('click')
-    
-    setCurrentSong({
-      index: index,
-      song: song
-    })
-    setPlay(true)
-  }, [setCurrentSong, song, index, setPlay])
+    if(currentSong.song !== song){
+      setCurrentSong({
+        index: index,
+        song: song
+      })
+      setPlay(true)
+    }else{
+      setPlay(play => !play)
+    }
+  }, [setCurrentSong, song, index, setPlay, currentSong])
   
   return <div className="song cursor-pointer relative" onClick={handleClick}>
     <div className={`transition duration-200 absolute w-full h-full bg-black song--hover hover:opacity-80 ${!isCurrentSong ? 'opacity-0' : 'opacity-80'}`}>
