@@ -2,7 +2,7 @@ import { useCallback, useContext } from "react"
 import { DarkContext } from "../../context/Dark"
 import { PlayContext } from "../../context/Play"
 
-const StopSong = ({className}) => {
+const StopSong = ({className, theme = true}) => {
   const [dark, ] = useContext(DarkContext)
   const [, setPlay] = useContext(PlayContext)
   
@@ -14,8 +14,8 @@ const StopSong = ({className}) => {
   
   return <div className={`${className} cursor-pointer p-2 mx-12`} onClick={stopVideo}>
   <svg width="23" height="30" viewBox="0 0 31 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
-    <rect x="20" width="11" height="43" fill={dark ? '#FFF' : '#161616'}/>
+    <rect width="11" height="43" fill={theme ? dark ? '#FFF' : '#161616' : '#FFF'}/>
+    <rect x="20" width="11" height="43" fill={theme ? dark ? '#FFF' : '#161616' : '#FFF'}/>
   </svg>
 </div>
 }

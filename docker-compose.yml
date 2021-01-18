@@ -10,7 +10,7 @@ services:
       - api
       - nginx
     ports:
-      - 2300:3000
+      - 3000:3000
     command: npm start
     volumes:
       - ./client/src:/client/src
@@ -24,7 +24,7 @@ services:
       - db
       - nginx
     ports:
-      - 2301:2301
+      - 3001:3001
     command: npm run watch
     restart: always
   db:
@@ -43,7 +43,9 @@ services:
     restart: always
   nginx:
     container_name: lofinginx
-    image: nginx:latest
+    image: nginx
+    build:
+      context: ./nginx
     ports:
       - 80:80
     restart: always
