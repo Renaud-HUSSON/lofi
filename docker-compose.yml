@@ -30,6 +30,9 @@ services:
       - ./api/server.js:/api/server.js
       - ./api/utils/:/api/utils/
       - ./api/config/:/api/config/
+      - ./api/routes/:/api/routes/
+    environment:
+      NODE_ENV: development
     restart: always
   db:
     container_name: lofidb

@@ -4,6 +4,12 @@ const updateData = require('./utils/updateData')
 
 const app = express()
 
+//Router middleware
+app.use('/api/songs', require('./routes/songs'))
+
+//Insert datas into database once the server is up
+updateData()
+
 //Update db datas every 15 minutes
 setInterval(updateData, 60 * 15 * 1000)
 
