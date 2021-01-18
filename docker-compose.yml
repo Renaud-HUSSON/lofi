@@ -26,6 +26,10 @@ services:
     ports:
       - 3001:3001
     command: npm run watch
+    volumes:
+      - ./api/server.js:/api/server.js
+      - ./api/utils/:/api/utils/
+      - ./api/config/:/api/config/
     restart: always
   db:
     container_name: lofidb
@@ -36,7 +40,7 @@ services:
       - 5432:5432
     environment:
       POSTGRES_PASSWORD: root
-      POSTGRES_USER: root
+      POSTGRES_USER: renaud
       POSTGRES_DB: lofi
     volumes:
       - ./db/data:/var/lib/postgresql/data
