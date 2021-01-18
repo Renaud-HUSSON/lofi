@@ -25,7 +25,7 @@ export const PlayerProvider = ({children}) => {
       //Set the initial video to the one in localstorage if it exists and is valid
       if(localStorageSong){
         const index = songs.findIndex(element => {
-          return element.id.videoId === localStorageSong
+          return element.videoId === localStorageSong
         })
   
         currentSongToSet = index !== -1
@@ -36,7 +36,7 @@ export const PlayerProvider = ({children}) => {
       }
 
       setPlayer(new YoutubeVideo({
-        videoId: currentSongToSet.song.id.videoId
+        videoId: currentSongToSet.song.videoId
       }))
       setInitialize(true)
     }

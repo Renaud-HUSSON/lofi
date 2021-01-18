@@ -18,7 +18,7 @@ export const CurrentSongProvider = ({children}) => {
       
       if(localStorageSong){
         const index = songs.findIndex(element => {
-          return element.id.videoId === localStorageSong
+          return element.video === localStorageSong
         })
   
         currentSongToSet = index !== -1
@@ -34,8 +34,8 @@ export const CurrentSongProvider = ({children}) => {
 
   useEffect(() => {
     if(currentSong){
-      localStorage.setItem('currentSong', currentSong.song.id.videoId)
-      player.changeVideo(songs[currentSong.index].id.videoId)
+      localStorage.setItem('currentSong', currentSong.song.video)
+      player.changeVideo(songs[currentSong.index].video)
     }
   }, [currentSong, player, songs])
 

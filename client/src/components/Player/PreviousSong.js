@@ -15,7 +15,7 @@ const PreviousSong = ({player, setPlay}) => {
         song: songs[(song.index - 1 + songs.length) % songs.length]
       }
     })
-    player.changeVideo(songs[(currentSong.index - 1 + songs.length) % songs.length].id.videoId)
+    player.changeVideo(songs[(currentSong.index - 1 + songs.length) % songs.length].videoId)
     setPlay(true)
   }, [player, setCurrentSong, songs, currentSong, setPlay])
   

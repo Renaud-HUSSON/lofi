@@ -35,7 +35,7 @@ const Song = ({song, index}) => {
         :<PlaySong className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-0" onClick={handleClick} theme={false}/>
       }
     </div>
-    <img className="w-full" src={song.snippet.thumbnails.medium.url} alt={song.snippet.title}/>
+    <img className="w-full" src={song.image} alt={song.title}/>
   </div>
 }
 
