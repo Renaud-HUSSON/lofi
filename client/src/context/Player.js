@@ -36,7 +36,7 @@ export const PlayerProvider = ({children}) => {
       }
 
       setPlayer(new YoutubeVideo({
-        videoId: currentSongToSet.song.videoId
+        videoId: currentSongToSet.song.video
       }))
       setInitialize(true)
     }
