@@ -11,6 +11,7 @@ import { CurrentSongProvider } from './context/CurrentSong';
 import { VideoEnabledProvider } from './context/VideoEnabled';
 import { PlayProvider } from './context/Play';
 import { PlayerProvider } from './context/Player';
+import {HelmetProvider} from 'react-helmet-async'
 
 require('dotenv').config()
 
@@ -24,7 +25,9 @@ ReactDOM.render(
               <CurrentSongProvider>
                 <PlayProvider>
                   <MenuProvider>
-                    <App />
+                    <HelmetProvider>
+                      <App />
+                    </HelmetProvider>
                   </MenuProvider>
                 </PlayProvider>
               </CurrentSongProvider>

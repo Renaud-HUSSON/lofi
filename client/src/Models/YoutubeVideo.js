@@ -25,7 +25,7 @@ class YoutubeVideo {
     }
   }
 
-  loadVideo = (e) => {
+  loadVideo = () => {
     this.#player = new window.YT.Player(this.#id || 'youtubevideoplayer', {
       height: '360',
       width: '640',
