@@ -4,10 +4,21 @@ import Menu from "./components/Menu";
 import Player from "./components/Player";
 import { MenuContext } from "./context/Menu";
 import Routes from "./Routes";
+import ReactGA from 'react-ga';
 
 function App() { 
   const [menu, ] = useContext(MenuContext)
 
+  ReactGA.initialize(process.env.REACT_APP_GA, {
+    debug: false,
+    titleCase: false,
+    gaOptions: {
+      userId: 123,
+      siteSpeedSampleRate: 100
+    }
+  });
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  
   return (
     <div className="transition-colors duration-500 dark:bg-black overflow-hidden">
       <div className={`transition duration-500 font-montserrat flex dark:text-white text-black ${menu ? 'transform -translate-x-56 md:-translate-x-72' : ''}`}>
