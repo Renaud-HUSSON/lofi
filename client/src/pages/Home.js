@@ -21,6 +21,7 @@ const Home = () => {
       <meta property="twitter:description" content="Do you like lofi? if you do this site is made for you, visit us to discover why"/>
       <meta property="twitter:image" content="https://lofimusicapp/images/lofi-image.png"/>
     </Helmet>
+    
     <HomeText />
     <HomeImages />
   </div>

@@ -26,6 +26,7 @@ const Collection = () => {
       <meta property="twitter:description" content="Displays most famous youtube lofi lives and allows you to listen to them, with a quick way to switch to another"/>
       <meta property="twitter:image" content="https://lofimusicapp/images/lofi-image.png"/>
     </Helmet>
+    
     {
       songs.map((song, index) => {
         return <Song key={song.video} song={song} index={index}/>
