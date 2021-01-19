@@ -4,7 +4,7 @@ import { DarkContext } from "../../context/Dark"
 import { SongsContext } from "../../context/Songs"
 
 const PreviousSong = ({player, setPlay}) => {
-  const [currentSong, setCurrentSong] = useContext(CurrentSongContext)
+  const [, setCurrentSong] = useContext(CurrentSongContext)
   const [songs, ] = useContext(SongsContext)
   const [dark, ] = useContext(DarkContext)
   
@@ -15,9 +15,8 @@ const PreviousSong = ({player, setPlay}) => {
         song: songs[(song.index - 1 + songs.length) % songs.length]
       }
     })
-    player.changeVideo(songs[(currentSong.index - 1 + songs.length) % songs.length].videoId)
     setPlay(true)
-  }, [player, setCurrentSong, songs, currentSong, setPlay])
+  }, [setCurrentSong, songs, setPlay])
   
   return <div className="cursor-pointer p-2" onClick={previousSong}>
   <svg width="19" height="30" viewBox="0 0 27 43" fill="none" xmlns="http://www.w3.org/2000/svg">
