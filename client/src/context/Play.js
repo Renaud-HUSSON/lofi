@@ -1,5 +1,4 @@
-import { createContext, useState } from "react";
-import { useContext, useEffect } from "react/cjs/react.development";
+import { createContext, useContext, useEffect, useState } from "react";
 import { PlayerContext } from "./Player";
 
 export const PlayContext = createContext()

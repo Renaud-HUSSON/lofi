@@ -1,5 +1,4 @@
-import { useRef, useState } from "react"
-import { useContext, useEffect } from "react/cjs/react.development"
+import { useContext, useEffect, useRef, useState } from "react"
 import { DarkContext } from "../../context/Dark"
 import { PlayerContext } from "../../context/Player"
 
