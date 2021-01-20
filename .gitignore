@@ -3,3 +3,6 @@ node_modules
 yarn-error.log
 data.json
 docker-compose.prod.yml
+data/certbot
+init-letsencrypt.sh
+build

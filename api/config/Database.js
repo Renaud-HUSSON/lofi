@@ -4,9 +4,9 @@ class Database {
   #conn
   
   #user = process.env.DB_USER || 'renaud'
-  #host = process.env.DB_HOST || 'db'
+  #host = process.env.DB_HOST || 'lofidb'
   #password = process.env.DB_PASSWORD || 'root'
-  #database = process.env.DB_PASSWORD || 'lofi'
+  #database = process.env.DB_DATABASE || 'lofi'
   #port = process.env.DB_PORT || 5432
 
   constructor() {
