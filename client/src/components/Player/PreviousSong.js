@@ -4,19 +4,21 @@ import { DarkContext } from "../../context/Dark"
 import { SongsContext } from "../../context/Songs"
 
 const PreviousSong = ({player, setPlay}) => {
-  const [, setCurrentSong] = useContext(CurrentSongContext)
+  const [currentSong, setCurrentSong] = useContext(CurrentSongContext)
   const [songs, ] = useContext(SongsContext)
   const [dark, ] = useContext(DarkContext)
   
   const previousSong = useCallback(() => {
-    setCurrentSong(song => {
-      return {
-        index: (song.index - 1 + songs.length) % songs.length,
-        song: songs[(song.index - 1 + songs.length) % songs.length]
-      }
-    })
-    setPlay(true)
-  }, [setCurrentSong, songs, setPlay])
+    if(currentSong){
+      setCurrentSong(song => {
+        return {
+          index: (song.index - 1 + songs.length) % songs.length,
+          song: songs[(song.index - 1 + songs.length) % songs.length]
+        }
+      })
+      setPlay(true)
+    }
+  }, [currentSong, setCurrentSong, songs, setPlay])
   
   return <div className="cursor-pointer p-2" onClick={previousSong}>
   <svg width="19" height="30" viewBox="0 0 27 43" fill="none" xmlns="http://www.w3.org/2000/svg">

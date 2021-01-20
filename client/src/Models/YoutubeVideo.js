@@ -48,12 +48,12 @@ class YoutubeVideo {
   }
 
   changeVideo(id){
-    if(this.#player){
+    try {
       this.#player.loadVideoById({
         'videoId': id,
         'suggestedQuality': 'medium'
       })
-    }    
+    }catch(e){}
   }
 
   play = () => {
