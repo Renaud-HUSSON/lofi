@@ -24,9 +24,10 @@ export const PlayerProvider = ({children}) => {
       //Set the initial video to the one in localstorage if it exists and is valid
       if(localStorageSong){
         const index = songs.findIndex(element => {
-          return element.videoId === localStorageSong
+          return element.video === localStorageSong
         })
-  
+
+        
         currentSongToSet = index !== -1
         ? {index: index, song: songs[index]}
         : {index: 0, song: songs[0]}

@@ -19,7 +19,7 @@ const PlayerDetails = ({details}) => {
         }
       </div>
       <div className=" w-full lg:flex-1">
-        <p className="text-center font-bold text-xl xl:text-2xl my-2"><a className="p-2" target='_blank' rel='noreferrer' href={`https://youtube.com/channel/${currentSong.song.channelId}`}>{currentSong.song.channel}</a></p>
+        <p className="text-center font-bold text-xl xl:text-2xl my-2"><a className="p-2" target='_blank' rel='noreferrer' href={`https://youtube.com/channel/${currentSong.song.channelid}`}>{currentSong.song.channel}</a></p>
         <p className="text-center text-xl xl:text-2xl my-2"><a className="p-2" target='_blank' rel='noreferrer' href={`https://youtube.com/watch?v=${currentSong.song.video}`}>{currentSong.song.title}</a></p>
       </div>
     </div>
