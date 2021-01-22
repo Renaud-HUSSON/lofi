@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { PlayContext } from "./Play";
 import { PlayerContext } from "./Player";
 import { SongsContext } from "./Songs";
 
@@ -7,6 +8,7 @@ export const CurrentSongContext = createContext()
 export const CurrentSongProvider = ({children}) => {
   const [songs, ] = useContext(SongsContext)
   const [player, ] = useContext(PlayerContext)
+  const [, setPlay] = useContext(PlayContext)
 
   const [currentSong, setCurrentSong] = useState()
 
@@ -36,6 +38,8 @@ export const CurrentSongProvider = ({children}) => {
     if(currentSong){
       localStorage.setItem('currentSong', currentSong.song.video)
       player.changeVideo(songs[currentSong.index].video)
+
+      setPlay(true)
     }
   }, [currentSong, player, songs])
 

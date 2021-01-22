@@ -22,15 +22,15 @@ ReactDOM.render(
         <VideoEnabledProvider>
           <SongsProvider>
             <PlayerProvider>
-              <CurrentSongProvider>
-                <PlayProvider>
+              <PlayProvider>
+                <CurrentSongProvider>
                   <MenuProvider>
                     <HelmetProvider>
                       <App />
                     </HelmetProvider>
                   </MenuProvider>
-                </PlayProvider>
-              </CurrentSongProvider>
+                </CurrentSongProvider>
+              </PlayProvider>
             </PlayerProvider>
           </SongsProvider>
         </VideoEnabledProvider>
