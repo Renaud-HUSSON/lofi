@@ -49,7 +49,7 @@ export const CurrentSongProvider = ({children}) => {
         setPlay(true)
       }
     }
-  }, [currentSong, player, songs, setPlay, firstRender])
+  }, [currentSong, player, songs, setPlay])// eslint-disable-line
 
   return <CurrentSongContext.Provider value={[currentSong, setCurrentSong]}>
     {children}
