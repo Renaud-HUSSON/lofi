@@ -10,6 +10,10 @@ export const CurrentSongProvider = ({children}) => {
   const [player, ] = useContext(PlayerContext)
   const [, setPlay] = useContext(PlayContext)
 
+  //State that handles the first render with a defined current song 
+  //Prevents the player to be on playing on first render
+  const [firstRender, setFirstRender] = useState(true)
+
   const [currentSong, setCurrentSong] = useState()
 
   useEffect(() => {
@@ -39,9 +43,13 @@ export const CurrentSongProvider = ({children}) => {
       localStorage.setItem('currentSong', currentSong.song.video)
       player.changeVideo(songs[currentSong.index].video)
 
-      setPlay(true)
+      setFirstRender(false)
+      
+      if(!firstRender){
+        setPlay(true)
+      }
     }
-  }, [currentSong, player, songs])
+  }, [currentSong, player, songs, setPlay, firstRender])
 
   return <CurrentSongContext.Provider value={[currentSong, setCurrentSong]}>
     {children}

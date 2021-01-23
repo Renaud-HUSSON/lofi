@@ -9,6 +9,8 @@ export const PlayProvider = ({children}) => {
   const [player, ] = useContext(PlayerContext)
 
   useEffect(() => {
+    console.log(play)
+    
     if(player){
       if(play){
         player.play()
