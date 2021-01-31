@@ -18,13 +18,13 @@ const Collection = () => {
       <meta property="og:url" content="https://lofimusicapp.com/collection"/>
       <meta property="og:title" content="Collection - Lofi Music App"/>
       <meta property="og:description" content="Displays most famous youtube lofi lives and allows you to listen to them, with a quick way to switch to another"/>
-      <meta property="og:image" content="https://lofimusicapp/images/lofi-image.png"/>
+      <meta property="og:image" content="https://lofimusicapp.com/images/lofi-image.png"/>
 
       <meta property="twitter:card" content="summary_large_image"/>
       <meta property="twitter:url" content="https://lofimusicapp.com/collection"/>
       <meta property="twitter:title" content="Collection - Lofi Music App"/>
       <meta property="twitter:description" content="Displays most famous youtube lofi lives and allows you to listen to them, with a quick way to switch to another"/>
-      <meta property="twitter:image" content="https://lofimusicapp/images/lofi-image.png"/>
+      <meta property="twitter:image" content="https://lofimusicapp.com/images/lofi-image.png"/>
     </Head>
     
     {
