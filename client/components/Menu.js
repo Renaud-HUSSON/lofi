@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { DarkContext } from "../context/Dark"
 import Parameters from "./Menu/Parameters"
 
@@ -9,9 +9,9 @@ const Menu = () => {
   return <nav className="transition-colors duration-500 relative flex flex-col font-bangers text-4xl dark:bg-white bg-black dark:text-black text-white">
     <Parameters />
     <ul className="w-56 md:w-72 mt-10">
-      <li className="text-center my-3"><Link className="p-3" to="/">HOME</Link></li>
-      <li className="text-center my-3"><Link className="p-3" to="/about">ABOUT</Link></li>
-      <li className="text-center my-3"><Link className="p-3" to="/collection">COLLECTION</Link></li>
+      <li className="text-center my-3"><Link className="p-3" href="/">HOME</Link></li>
+      <li className="text-center my-3"><Link className="p-3" href="/about">ABOUT</Link></li>
+      <li className="text-center my-3"><Link className="p-3" href="/collection">COLLECTION</Link></li>
     </ul>
     <div className="absolute left-4 bottom-4">
       <a className=" flex" href="https://github.com/Renaud-HUSSON/lofi" target="_blank" rel="noreferrer">

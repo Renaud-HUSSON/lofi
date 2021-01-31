@@ -10,9 +10,15 @@ services:
       - lofiapi
     ports:
       - 3000:3000
-    command: npm start
+    command: npm run dev
     volumes:
+      - ./client/components:/client/components
+      - ./client/context:/client/context
+      - ./client/Models:/client/Models
+      - ./client/pages:/client/pages
+      - ./client/public:/client/public
       - ./client/src:/client/src
+      - ./client/styles:/client/styles
     restart: always
   lofiapi:
     container_name: lofiapi

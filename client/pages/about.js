@@ -1,8 +1,8 @@
-import { Helmet } from "react-helmet-async"
+import Head from "next/head"
 
 const About = () => {
   return <section className="pt-8">
-    <Helmet>
+    <Head>
       <title>About - Lofi Music App</title>
       <meta name="title" content="About - Lofi Music App"/>
       <meta name="description" content="Explains what is Lofi Music App, what you can do with it and how simple it is"/>
@@ -18,7 +18,7 @@ const About = () => {
       <meta property="twitter:title" content="About - Lofi Music App"/>
       <meta property="twitter:description" content="Explains what is Lofi Music App, what you can do with it and how simple it is"/>
       <meta property="twitter:image" content="https://lofimusicapp/images/lofi-image.png"/>
-    </Helmet>
+    </Head>
     
     <h1 className="mb-5 md:text-5xl text-4xl font-black">ABOUT</h1>
     <p className="mb-5 text-xl">This application displays most famous lofi lives on youtube, and allows you to listen to them from here, while also providing a way to quickly switch to another if you’re bored of one, or you just want to change.</p>

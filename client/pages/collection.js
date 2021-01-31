@@ -2,14 +2,14 @@ import { useContext } from "react"
 import Song from "../components/Collection/Songs"
 import Loading from "../components/shared/Loading"
 import { SongsContext } from "../context/Songs"
-import {Helmet} from 'react-helmet-async'
+import Head from 'next/head'
 
 const Collection = () => {
   const [songs, ] = useContext(SongsContext)
   
   return songs
   ?<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    <Helmet>
+    <Head>
       <title>Collection - Lofi Music App</title>
       <meta name="title" content="About - Collection - Lofi Music App"/>
       <meta name="description" content="Displays most famous youtube lofi lives and allows you to listen to them, with a quick way to switch to another"/>
@@ -25,7 +25,7 @@ const Collection = () => {
       <meta property="twitter:title" content="Collection - Lofi Music App"/>
       <meta property="twitter:description" content="Displays most famous youtube lofi lives and allows you to listen to them, with a quick way to switch to another"/>
       <meta property="twitter:image" content="https://lofimusicapp/images/lofi-image.png"/>
-    </Helmet>
+    </Head>
     
     {
       songs.map((song, index) => {

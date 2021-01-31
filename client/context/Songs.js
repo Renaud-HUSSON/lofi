@@ -11,7 +11,6 @@ export const SongsProvider = ({children}) => {
     .then(json => {
       setSongs(json)
     })
-
   }, [])
 
   return <SongsContext.Provider value={[songs, setSongs]}>

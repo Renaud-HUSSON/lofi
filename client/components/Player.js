@@ -3,7 +3,7 @@ import { CurrentSongContext } from "../context/CurrentSong"
 import { DarkContext } from "../context/Dark"
 import PlayerControls from "./Player/PlayerControls"
 import PlayerDetails from "./Player/PlayerDetails"
-import { useLocation } from "react-router-dom"
+import { useRouter } from "next/router"
 import VolumeChanger from "./Player/VolumeChanger"
 
 const Player = React.memo(() => {
@@ -12,7 +12,7 @@ const Player = React.memo(() => {
 
   const [details, setDetails] = useState(false)
 
-  const location = useLocation()
+  const location = useRouter()
 
   useEffect(() => {
     setDetails(false)

@@ -1,15 +1,15 @@
 import { createContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useRouter } from 'next/router'
 
 export const MenuContext = createContext()
 
 export const MenuProvider = ({children}) => {
   const [menu, setMenu] = useState(false)
-  const location = useLocation()
+  const location = useRouter()
 
   useEffect(() => {
     setMenu(false)
-  }, [location.key])
+  }, [location])
   
   return <MenuContext.Provider value={[menu, setMenu]}>
     {children}

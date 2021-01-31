@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { DarkContext } from "../context/Dark"
 import { MenuContext } from "../context/Menu"
 
@@ -12,7 +12,7 @@ const Header = () => {
   }
   
   return <header className="relative h-32 z-50 font-bangers flex justify-between items-center w-screen md:pl-20 md:pr-16 md:py-10 pl-5 pr-1">
-    <p className="text-4xl sm:text-6xl"><Link to="/">LOFI.</Link></p>
+    <p className="text-4xl sm:text-6xl"><Link href="/">LOFI.</Link></p>
     <div className="p-4 cursor-pointer" onClick={HandleClick}>
       <svg viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 9.44449C4.07407 6.22227 8.47778 0.744489 17.5 4.61116C26.5222 8.47782 30.9259 5.14816 32 3" stroke={`${dark ? '#FFF' : '#161616'}`} strokeWidth="5"/>
