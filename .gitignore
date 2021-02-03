@@ -6,3 +6,4 @@ docker-compose.prod.yml
 data/certbot
 init-letsencrypt.sh
 build
+client/utils/ga.js

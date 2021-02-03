@@ -19,6 +19,7 @@ services:
       - ./client/public:/client/public
       - ./client/src:/client/src
       - ./client/styles:/client/styles
+      - ./client/utils:/client/utils
     restart: always
   lofiapi:
     container_name: lofiapi
