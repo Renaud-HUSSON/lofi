@@ -1,10 +1,14 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { MenuContext } from '../context/Menu'
 import Header from './Header'
 import Player from './Player'
 import Menu from './Menu'
+import ReactGA from 'react-ga';
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const Layout = ({children}) => {
+  
   const [menu, ] = useContext(MenuContext)
   
   return <div className="transition-colors duration-500 dark:bg-black overflow-hidden">
